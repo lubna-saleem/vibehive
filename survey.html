@@ -1,0 +1,53 @@
+<!-- vibe-hive-website/survey.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Survey – VibeHive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="survey-page">
+  <div class="survey-container">
+    <h2>Let’s get to know you 🐝</h2>
+    <form id="surveyForm">
+      <label for="origin">Where are you from?</label>
+      <input type="text" id="origin" required />
+
+      <label for="languages">Languages you speak</label>
+      <input type="text" id="languages" placeholder="e.g. English, Hindi, Arabic" required />
+
+      <label for="culture">Preferred cultural vibe in your neighborhood</label>
+      <input type="text" id="culture" placeholder="e.g. Traditional, Mixed, Modern" required />
+
+      <label for="kids">Do you have kids?</label>
+      <select id="kids">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="prefer-not">Prefer not to say</option>
+      </select>
+
+      <label for="location">Your location (Area or City)</label>
+      <select id="location" required>
+        <option value="al-barsha">Al Barsha, Dubai</option>
+      </select>
+
+      <label for="groupchat">Interested in joining local group chats and events?</label>
+      <select id="groupchat">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="buying">Are you currently house-hunting?</label>
+      <select id="buying">
+        <option value="yes">Yes, not yet settled</option>
+        <option value="no">No, already settled</option>
+      </select>
+
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

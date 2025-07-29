@@ -1,0 +1,36 @@
+<!-- vibe-hive-website/invite-family.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Invite Family – VibeHive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="invite-family-page">
+  <div class="invite-container">
+    <h2>Let’s connect your family 🏡</h2>
+
+    <form id="inviteForm">
+      <label for="invite-email">Invite a family member (not yet on VibeHive)</label>
+      <input type="email" id="invite-email" placeholder="Enter their email" required />
+      <button type="submit">Send Invite</button>
+    </form>
+
+    <div class="divider">or</div>
+
+    <form id="connectForm">
+      <label for="existing-email">Request to connect with a family member (already on VibeHive)</label>
+      <input type="email" id="existing-email" placeholder="Enter their email" required />
+      <button type="submit">Send Request</button>
+    </form>
+
+    <div class="next-section">
+      <p>Finished inviting? 🎉</p>
+      <button onclick="goToHome()">Continue to Homepage</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

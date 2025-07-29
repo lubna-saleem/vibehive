@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VibeHive - Public Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function filterGallery() {
+      const selected = document.getElementById('neighborhoodFilter').value;
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        const match = item.getAttribute('data-neighborhood') === selected || selected === 'all';
+        item.style.display = match ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="home.html">🏠 Home</a>
+    <a href="chats.html">💬 Chats</a>
+    <a href="public-gallery.html">🌍 Public Gallery</a>
+    <a href="cafe-deals.html">☕ Café Updates</a>
+    <a href="teen-jobs.html">🧑‍🎓 Teen Job Hunt</a>
+    <a href="ai-analysis.html">🏡 AI Analysis</a>
+    <a href="community-commerce.html">🛍️ Community Commerce</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🟡 VibeHive</div>
+    <div class="header-right">
+      <a href="profileaccount.html" class="account">👤 My Account</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Neighborhood Moments</h1>
+    <p>View and share memories from your area.</p>
+
+    <!-- Upload Section -->
+    <form class="upload-form">
+      <h2>📸 Share a New Moment</h2>
+      <input type="file" name="image" accept="image/*" required />
+      <input type="text" name="caption" placeholder="Write a short caption..." required />
+      <select name="neighborhood" required>
+        <option value="">Select Neighborhood</option>
+        <option value="jumeirah">Jumeirah</option>
+        <option value="albarsha">Al Barsha</option>
+        <option value="mirdif">Mirdif</option>
+      </select>
+      <button type="submit">Upload</button>
+    </form>
+
+    <!-- 🔍 Filter Dropdown -->
+    <div class="filter-bar">
+      <label for="neighborhoodFilter">📍 Filter by neighborhood:</label>
+      <select id="neighborhoodFilter" onchange="filterGallery()">
+        <option value="all">All</option>
+        <option value="jumeirah">Jumeirah</option>
+        <option value="albarsha">Al Barsha</option>
+        <option value="mirdif">Mirdif</option>
+      </select>
+    </div>
+
+    <!-- 🖼️ Gallery Grid -->
+    <div class="gallery-grid">
+      <div class="gallery-item" data-neighborhood="jumeirah">
+        <img src="assets/community-event.jpg" alt="Event" />
+        <p>🎉 Family Fun Day in Jumeirah</p>
+        <div class="gallery-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-neighborhood="albarsha">
+        <img src="assets/cafe-hangout.jpg" alt="Cafe" />
+        <p>☕ Neighbors at Al Barsha Vibe Café</p>
+        <div class="gallery-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-neighborhood="mirdif">
+        <img src="assets/kids-park.jpg" alt="Kids" />
+        <p>🌳 Mirdif Park Playdate</p>
+        <div class="gallery-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

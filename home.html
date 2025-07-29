@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeHive - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf4;
+    }
+
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  width: 210px;
+  background-color: #fff3c2;
+  padding: 20px 10px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 101;
+}
+
+
+.sidebar a {
+  text-decoration: none;
+  color: #444;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar a:hover {
+  background-color: #fff3c2;
+  color: #000;
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0px;  /* sidebar width */
+  right: 0;
+  height: 70px;
+  background-color: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #f0e0aa;
+  z-index: 102;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #f9a825;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 230px;  /* sidebar width */
+  padding-top: 80px;   /* header height + some spacing */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+    .section {
+      background-color: #fffef7;
+      border: 2px solid #f9a825;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    textarea {
+      font-family: 'Segoe UI', sans-serif;
+      width: 100%;
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #f9a825;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #f57f17;
+    }
+
+    .post {
+      background-color: #fff;
+      border: 1px solid #f9d25e;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    }
+
+    .post p {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .post img {
+      width: 50%;
+      border-radius: 10px;
+      margin-top: 10px;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .post-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .post-actions button {
+      background-color: transparent;
+      color: #f9a825;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .post-actions button:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="home.html">🏠 Home</a>
+    <a href="chats.html">💬 Chats</a>
+    <a href="public-gallery.html">🌍 Public Gallery</a>
+    <a href="cafe-deals.html">☕ Café Updates</a>
+    <a href="teen-jobs.html">🧑‍🎓 Teen Job Hunt</a>
+    <a href="ai-analysis.html">🏡 AI Analysis</a>
+    <a href="community-commerce.html">🛍️ Community Commerce</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🟡 VibeHive</div>
+    <div class="header-right">
+      <a href="profileaccount.html" class="account">👤 My Account</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <!-- What's your vibe -->
+    <div class="section">
+      <h2>What's your vibe?</h2>
+      <textarea rows="3" placeholder="Share a thought, moment, or idea..."></textarea>
+      <br>
+      <button>Post Vibe</button>
+    </div>
+
+    <!-- Vibes Section -->
+    <div class="section">
+      <h2>📣 Vibes</h2>
+      <div class="post">
+        <h3>Vibehive User</h3>
+        <p>🌇 Sunset meetup this Friday at the beach park! Bring your snacks 🍪</p>
+        <div class="post-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h3>Vibehive User</h3>
+        <p>🌿 Gardening swap! I have extra basil & mint — anyone want to trade?</p>
+        <div class="post-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Private Gallery Section -->
+    <div class="section">
+      <h2>🏡 Private Gallery</h2>
+
+      <div class="post">
+        <h3>Vibehive User</h3>
+        <p>🧁 Little cupcake party last night — thank you neighbors for coming!</p>
+        <img src="assets/your-photo1.jpg" alt="Cupcake gathering photo">
+        <div class="post-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h3>Vibehive User</h3>
+        <p>🐱 Someone's cat photobombed our picnic... again! 😂</p>
+        <img src="assets/your-photo2.jpg" alt="Funny cat picnic photo">
+        <div class="post-actions">
+          <button>❤️ Like</button>
+          <button>💬 Comment</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

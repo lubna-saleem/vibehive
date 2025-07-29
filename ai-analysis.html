@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Neighborhood Analysis | VibeHive</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .main-content {
+      margin-left: 200px;
+      padding: 100px 20px 40px;
+      background-color: #fffdf3;
+      min-height: 100vh;
+    }
+
+    .analysis-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .area-buttons {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .area-buttons button {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f9a825;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .area-buttons button:hover {
+      background-color: #f57f17;
+    }
+
+    .analysis-result {
+      font-size: 1.1em;
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .analysis-result ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .analysis-result li {
+      margin: 10px 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .neighborhood-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .view-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background-color: #f9a825;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .view-more:hover {
+      background-color: #f57f17;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        margin-left: 0;
+        padding-top: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="home.html">🏠 Home</a>
+    <a href="chats.html">💬 Chats</a>
+    <a href="public-gallery.html">🌍 Public Gallery</a>
+    <a href="cafe-deals.html">☕ Café Updates</a>
+    <a href="teen-jobs.html">🧑‍🎓 Teen Job Hunt</a>
+    <a href="ai-analysis.html">🏡 AI Analysis</a>
+    <a href="community-commerce.html">🛍️ Community Commerce</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🟡 VibeHive</div>
+    <div class="header-right">
+      <a href="profileaccount.html" class="account">👤 My Account</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="analysis-header">
+      <h2>AI Neighborhood Vibe Analysis</h2>
+      <p>Select a neighborhood to see community insights:</p>
+    </div>
+
+    <div class="area-buttons">
+      <button onclick="analyzeNeighborhood('Al Barsha')">Al Barsha</button>
+      <button onclick="analyzeNeighborhood('Jumeirah')">Jumeirah</button>
+      <button onclick="analyzeNeighborhood('Mirdif')">Mirdif</button>
+    </div>
+
+    <div class="analysis-result hidden" id="analysisResult">
+      <p><strong>Analysing...</strong></p>
+    </div>
+  </section>
+
+  <script>
+    const neighborhoods = {
+      "Al Barsha": {
+        safety: "High",
+        familyFriendly: "Very",
+        culture: "Mixed, modern",
+        nationalities: "Expats-heavy (UK, India, Arab)",
+        languages: "English, Arabic, Hindi",
+        cafes: "Modern cafés, family-friendly spots",
+        image: "assets/albarsha.jpg",
+        gallery: "public-gallery.html#albarsha"
+      },
+      "Jumeirah": {
+        safety: "Very High",
+        familyFriendly: "Moderate",
+        culture: "Traditional meets luxury",
+        nationalities: "Emirati, Western expats",
+        languages: "Arabic, English",
+        cafes: "Beach cafés, upscale brunch places",
+        image: "assets/jumeirah.jpg",
+        gallery: "public-gallery.html#jumeirah"
+      },
+      "Mirdif": {
+        safety: "Moderate to High",
+        familyFriendly: "Very",
+        culture: "Traditional, community-centered",
+        nationalities: "Arab families, South Asians",
+        languages: "Arabic, Urdu, English",
+        cafes: "Local cafés, quieter setups",
+        image: "assets/mirdif.jpg",
+        gallery: "public-gallery.html#mirdif"
+      }
+    };
+
+    function analyzeNeighborhood(name) {
+      const resultDiv = document.getElementById('analysisResult');
+      resultDiv.classList.remove('hidden');
+      resultDiv.innerHTML = `<p><strong>Analysing ${name}...</strong></p>`;
+
+      setTimeout(() => {
+        const data = neighborhoods[name];
+        resultDiv.innerHTML = `
+          <h3>${name} - Community Snapshot</h3>
+          <img class="neighborhood-img" src="${data.image}" alt="${name}" />
+          <ul>
+            <li><strong>Safety:</strong> ${data.safety}</li>
+            <li><strong>Family Friendly:</strong> ${data.familyFriendly}</li>
+            <li><strong>Culture:</strong> ${data.culture}</li>
+            <li><strong>Nationalities:</strong> ${data.nationalities}</li>
+            <li><strong>Languages Spoken:</strong> ${data.languages}</li>
+            <li><strong>Café Culture:</strong> ${data.cafes}</li>
+          </ul>
+          <a class="view-more" href="${data.gallery}">📷 View more pictures & videos</a>
+        `;
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
